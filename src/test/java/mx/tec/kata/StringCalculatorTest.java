@@ -68,5 +68,19 @@ class StringCalculatorTest {
 		assertEquals(expectedResult, actualResult);
 	}
 	
+	@Test
+	void testGivenCalculator_whenAdd1commaminus3comma5commaminus7comma9_thenException() {
+		String expectedResult = "negatives not allowed: -3, -7";
+		String numbers = "1,-3,5,-7,9";
+		
+		
+		try {
+			calc.add(numbers);
+			fail("Exception Not Thrown");
+		} catch (UnsupportedOperationException e) {
+			assertEquals(expectedResult, e.getMessage());
+		}
+	}
+	
 
 }
