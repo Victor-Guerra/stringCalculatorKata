@@ -49,9 +49,19 @@ class StringCalculatorTest {
 	}
 	
 	@Test
-	void testGivenCalculator_whenAdd1_newline_2_comma_3() {
+	void testGivenCalculator_whenAdd1newline2comma3then6() {
 		int expectedResult = 6;
 		String numbers = "1\n2,3";
+		
+		int actualResult = calc.add(numbers);
+		
+		assertEquals(expectedResult, actualResult);
+	}
+	
+	@Test
+	void test_givenCalculator_whenSlashSlashSemicolonNewline1Semicolon2_then3() {
+		int expectedResult = 3;
+		String numbers = "//;\n1;2";
 		
 		int actualResult = calc.add(numbers);
 		
